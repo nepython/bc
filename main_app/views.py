@@ -19,7 +19,7 @@ def index(request):
 
 def login(request):
 #	if request.POST:
-	return redirect('/accounts/google/login/')
+	return redirect('/accounts/google/login')
 #	return render(request,'index.html')
 
 @login_required(login_url='/')
@@ -48,21 +48,21 @@ def question(request):
 
 def runCode(request):
 	postData = json.loads( request.body.decode('utf-8') )
-	url = 'https://api.judge0.com/submissions?base64_encoded=false&wait=false'
+	url = 'http://143.198.238.205:2358/submissions?base64_encoded=false&wait=false'
 	que = Question.objects.get(qno=postData['qNo'])
 	stdin = '3'+'\n'+que.test_case1+'\n'+que.test_case2+'\n'+que.test_case3
 	# postData['stdin'] = str(base64.b64encode(stdin.encode("utf-8")))
 	postData['stdin'] = stdin
 	# postData['source_code'] = str(base64.b64encode(postData['source_code'].encode('utf-8')))
 	print(postData)
-
 	response = requests.post(url,json=postData)
 	resp = response.json()
+	print(resp)
 	# resp = json.loads(resp)
 	print('qNo',postData['qNo'])
 	print('response token: ',resp['token'])
 
-	url2 = 'https://api.judge0.com/submissions/'+resp['token']+'?base64_encoded=false'
+	url2 = 'http://143.198.238.205:2358/submissions/'+resp['token']+'?base64_encoded=false'
 	time.sleep(1)
 	resp = requests.get(url2).json()
 	if 'status' in resp:
