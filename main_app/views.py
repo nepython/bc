@@ -19,7 +19,7 @@ def index(request):
 
 def login(request):
 #	if request.POST:
-	return redirect('/accounts/google/login/callback/')
+	return redirect('/accounts/google/login/')
 #	return render(request,'index.html')
 
 @login_required(login_url='/')
