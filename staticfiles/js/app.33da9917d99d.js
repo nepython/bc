@@ -50,7 +50,7 @@ function leaderbInit(){
   });
 }
 function disableCopyPaste(){
-  /*var inp = document.getElementsByClassName('noselect')[0];
+  var inp = document.getElementsByClassName('noselect')[0];
   inp.addEventListener('select', function() {
     this.selectionStart = this.selectionEnd;
   }, false);
