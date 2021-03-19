@@ -1,6 +1,6 @@
 function getLeaderboard() {
     $.ajax({
-        url : "http://127.0.0.1:8000/leaderboard/",
+        url : "https://blind-coding-2021.herokuapp.com/leaderboard/",
         type : "GET",
         beforeSend : function() {
             document.getElementById('leaderboard-loader').style.display = 'block';
