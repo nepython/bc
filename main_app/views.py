@@ -50,7 +50,7 @@ def runCode(request):
 	postData = json.loads( request.body.decode('utf-8') )
 	url = 'http://143.198.238.205:2358/submissions?base64_encoded=false&wait=false'
 	que = Question.objects.get(qno=postData['qNo'])
-	stdin = '3'+'\n'+que.test_case1+'\n'+que.test_case2+'\n'+que.test_case3
+	stdin = '6'+'\n'+que.test_case1+'\n'+que.test_case2+'\n'+que.test_case3+'\n'+que.test_case4+'\n'+que.test_case5+'\n'+que.test_case6
 	# postData['stdin'] = str(base64.b64encode(stdin.encode("utf-8")))
 	postData['stdin'] = stdin
 	# postData['source_code'] = str(base64.b64encode(postData['source_code'].encode('utf-8')))
@@ -89,7 +89,7 @@ def runCode(request):
 	else:
 		quesNo = postData['qNo']
 		quesData = Question.objects.get(qno= quesNo)
-		answer = quesData.test_case1_sol+'\n'+quesData.test_case2_sol+'\n'+quesData.test_case3_sol+'\n'
+		answer = quesData.test_case1_sol+'\n'+quesData.test_case2_sol+'\n'+quesData.test_case3_sol+'\n'+quesData.test_case4_sol+'\n'+quesData.test_case5_sol+'\n'+quesData.test_case6_sol+'\n'
 		print(answer)
 		currUser.timeElapsed += int(postData['timeElapsed'])
 		if answer == resp['stdout']:

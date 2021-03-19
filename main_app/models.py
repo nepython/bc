@@ -22,13 +22,20 @@ class Question(models.Model):
     testcaseno=models.IntegerField(default=0)
     samplein = models.CharField(max_length=45000,default='')
     sampleout = models.CharField(max_length=45000,default='')
-    test_case1=models.CharField(max_length=1000)
-    test_case2=models.CharField(max_length=1000)
-    test_case3=models.CharField(max_length=1000)
-    test_case1_sol=models.CharField(max_length=1000)
-    test_case2_sol=models.CharField(max_length=1000)
-    test_case3_sol=models.CharField(max_length=1000)
-
+    test_case1=models.CharField(max_length=1000,default='')
+    test_case2=models.CharField(max_length=1000,default='')
+    test_case3=models.CharField(max_length=1000,default='')
+    test_case4=models.CharField(max_length=1000,default='')
+    test_case5=models.CharField(max_length=1000,default='')
+    test_case6=models.CharField(max_length=1000,default='')
+    
+    test_case1_sol=models.CharField(max_length=1000,default='')
+    test_case2_sol=models.CharField(max_length=1000,default='')
+    test_case3_sol=models.CharField(max_length=1000,default='')
+    test_case4_sol=models.CharField(max_length=1000,default='')
+    test_case5_sol=models.CharField(max_length=1000,default='')
+    test_case6_sol=models.CharField(max_length=1000,default='')
+    
     def __str__(self):
         return str(self.pk)
 

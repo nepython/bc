@@ -50,7 +50,7 @@ function leaderbInit(){
   });
 }
 function disableCopyPaste(){
-  var inp = document.getElementsByClassName('noselect')[0];
+  /*var inp = document.getElementsByClassName('noselect')[0];
   inp.addEventListener('select', function() {
     this.selectionStart = this.selectionEnd;
   }, false);
@@ -76,7 +76,7 @@ function disableCopyPaste(){
           // console.log('copy-paste');
           return false;
        }
-    });
+    });*/
 }
 
 function populateLangs()
@@ -242,7 +242,7 @@ function getQuestion(queNum){
           inStr += inpt[i];
           inStr += '\n';
         }
-        let que = response['question'] + '<br><br>'+'Sample Input'+'<br>'+response['sampTCNum']+'<br>'+inStr+'<br><br>'+'Sample Output'+'<br>'+response['sampleOut'];
+        let que = response['question'] + '<br><br>'+'Sample Input'+'<br>'+inStr+'<br><br>'+'Sample Output'+'<br>'+response['sampleOut'];
         document.getElementsByClassName('left')[0].innerHTML=que;
         qNo = response['qNo'];
         document.getElementById('score').innerHTML = response['userScore'];

@@ -50,7 +50,7 @@ function leaderbInit(){
   });
 }
 function disableCopyPaste(){
-  /*var inp = document.getElementsByClassName('noselect')[0];
+  var inp = document.getElementsByClassName('noselect')[0];
   inp.addEventListener('select', function() {
     this.selectionStart = this.selectionEnd;
   }, false);
@@ -65,7 +65,7 @@ function disableCopyPaste(){
 
     $(".no-copy-paste").keydown(function(e) {
         // console.log('Key pressed inside editor: ', e.keyCode);
-        if(ctrlDown && (e.keyCode == cKey))
+        /*if(ctrlDown && (e.keyCode == cKey))
         { 
           console.log("Document catch Ctrl+C");
         }
@@ -75,7 +75,7 @@ function disableCopyPaste(){
         if (ctrlDown && (e.keyCode == vKey || e.keyCode == cKey)){
           // console.log('copy-paste');
           return false;
-       }
+       }*/
     });
 }
 
