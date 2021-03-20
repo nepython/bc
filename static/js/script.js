@@ -1,6 +1,6 @@
 function getLeaderboard() {
     $.ajax({
-        url : window.location.protocol+"//"+window.location.hostname+"/leaderboard/",
+        url : "http://127.0.0.1:8000/leaderboard/",
         type : "GET",
         beforeSend : function() {
             document.getElementById('leaderboard-loader').style.display = 'block';
@@ -17,8 +17,9 @@ function getLeaderboard() {
                 document.getElementsByClassName('score')[i+2].innerHTML = objRecieved.score[i]; //Get Array of Score's here
             }
             document.getElementById('userRank').innerHTML = 'Your Rank : ' + objRecieved.rank;
+            document.getElementById('myrank').innerHTML = objRecieved.rank;
         },
-        error: function () {
+        error : function() {
             console.log("Error");
         }
     })
