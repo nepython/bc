@@ -1,6 +1,6 @@
 function getLeaderboard() {
     $.ajax({
-        url : "https://blindcoding.tech/leaderboard/",
+        url : "https://"+window.location.hostname+"/leaderboard/",
         type : "GET",
         beforeSend : function() {
             document.getElementById('leaderboard-loader').style.display = 'block';
