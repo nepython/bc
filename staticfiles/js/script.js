@@ -18,7 +18,7 @@ function getLeaderboard() {
             }
             document.getElementById('userRank').innerHTML = 'Your Rank : ' + objRecieved.rank;
         },
-        error : function() {
+        error: function () {
             console.log("Error");
         }
     })
