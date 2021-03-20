@@ -80,19 +80,16 @@ WSGI_APPLICATION = 'blind_coding.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-         'ENGINE': 'sql_server.pyodbc',
-         'NAME': 'blindcoding.database.windows.net',
-         'USER': 'blindcoding',
-         'PASSWORD': 'codingclub@123',
-         'HOST': 'blindcoding.database.windows.net',
-         'PORT': '1433',
-         'OPTIONS': {
-             'driver': 'ODBC Driver 17 for SQL Server',
-             'MARS_Connection': 'True',
-         }
-     }
- }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'blindcoding.database.windows.net',
+        'USER': 'blindcoding',
+        'PASSWORD': 'codingclub@123',
+        'HOST': 'blindcoding.database.windows.net',
+        'PORT': '3306',
+    }
+}
+
 
 
 # Password validation
