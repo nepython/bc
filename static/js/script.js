@@ -1,6 +1,6 @@
 function getLeaderboard() {
     $.ajax({
-        url : "https://"+window.location.hostname+"/leaderboard/",
+        url : window.location.protocol+"//"+window.location.hostname+"/leaderboard/",
         type : "GET",
         beforeSend : function() {
             document.getElementById('leaderboard-loader').style.display = 'block';

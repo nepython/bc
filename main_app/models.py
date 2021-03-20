@@ -37,7 +37,7 @@ class Question(models.Model):
     test_case6_sol=models.CharField(max_length=1000,default='')
     
     def __str__(self):
-        return str(self.pk)
+        return str(self.weight)
 
 class Time_Penalty(models.Model):
     player = models.ForeignKey(Userdata, on_delete=models.CASCADE)
